@@ -1,5 +1,56 @@
-<div>
-    <form action=""></form>
-    <input type="text">
-    <button>Click aquí</button>
+<div class="container-all">
+    <section class="form-inputs">
+        <div class="design">
+            <h3>Diseña tu tarjeta</h3>
+            <form action="form-design-card">
+                <input type="checkbox" class="style-one">
+                <label for=""> Estilo 1</label>
+                <input type="checkbox" class="style-two">
+                <label for=""> Estilo 2</label>
+                <input type="checkbox" class="style-three">
+                <label for=""> Estilo 3</label>
+            </form>
+        </div>
+        <form action="" class="form-container">
+            <label for="">Sube tu imagen</label>
+            <input type="image" placeholder="">
+            <label for="">Nombre</label>
+            <input type="text" placeholder="María">
+            <label for="">Rol</label>
+            <input type="text" placeholder="Front-end">
+            <label for="">@ GitHub</label>
+            <input type="url" placeholder="https://github.com/maria">
+            <label for="">Email</label>
+            <input type="email" placeholder="maria@gmail.com">
+            <label for="">Teléfono</label>
+            <input type="tel" placeholder="555 555 555">
+            <label for="">Usuario de Slack</label>
+            <input type="text" placeholder="@_maria">
+        </form>
+        <div class="download-card">
+            <button class="download-card-button">Descarga tu tarjeta</button>
+        </div>
+    </section>
+
+    <section class="form-card">
+        <div class="title-card">
+            <h3 class="preview-title">Preview</h3>
+        </div>
+        <div class="preview-card">
+            <div class="preview-card-image">
+                <img src="images/logo-adalab.png" alt="">   
+            </div>
+            <div class="preview-card-info">
+                <p class="card-name">María</p>
+                <p class="card-rol">Front-end</p>
+                <p class="card-github">https://github.com/maria</p>
+                <p class="card-email">maria@gmail.com</p>
+                <p class="card-phone">555 555 555</p>
+                <p class="card-slack">@_maria</p>
+            </div>
+            <div class="reset-button-container">
+                <button class="reset-button">Reset</button>
+            </div>
+        </div>
+    </section>
 </div>
