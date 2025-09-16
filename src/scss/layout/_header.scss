@@ -1,1 +1,36 @@
 @use '../core/variables' as vars;
+
+@import url('https://db.onlinewebfonts.com/c/03d33d67fd07fb2d31001eb9f90d58bf?family=Posterama+2001+W04+SemiBold');
+
+.logo-and-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.adalab-logo-title {
+    height: auto;
+    width: 118px;
+}
+
+.lanting_title {
+    font-family: "Posterama 2001 W04 SemiBold";
+    color: #53575A;
+}
+
+.subtitle-container {
+    background-color: #0A9D8D;
+    background-image: url(https://adalab.es/wp-content/uploads/2022/06/LogoElement.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.lanting_sub_title {
+    font-family: 'Rubik', Helvetica, Arial, Lucida, sans-serif;
+    font-weight: 600;
+    color: white;
+    padding: 100px;
+}
+

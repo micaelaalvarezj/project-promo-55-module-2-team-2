@@ -66,7 +66,7 @@ inputTel.addEventListener("input", () => {
 
 
 // Resetear con el botón
-resetBtn.addEventListener("click", () => {
+/*resetBtn.addEventListener("click", () => {
   form.reset();             // limpia todos los inputs del form
   inputImage.value = "";    // asegura que el file input quede vacío
   img.src = "";             // borra la imagen del preview
@@ -76,4 +76,4 @@ resetBtn.addEventListener("click", () => {
   slackUser.textContent = "";
   eMail.textContent = "";
   phone.textContent = "";
-});
+});*/

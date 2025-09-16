@@ -1,34 +1,182 @@
 @use '../core/variables' as vars;
 
- .container-all {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+.container-all {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  margin: 50px;
 }
 
 .form-container {
-    display: flex;
-    flex-direction: column;
-    max-width: fit-content;
-    background-color: white;
-    border: solid, black;
-    padding: 30px;
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: #4A4A4A;
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Rubik';
 }
 
-.form-card {
-    max-width: 50%;
-    background-color: white;
-    border: solid, black;
-    padding: 30px;
-    align-content: center;
-}
+/*.form-card {
+  max-width: 50%;
+  background-color: white;
+  padding: 30px;
+  align-content: center;
+}*/
 
 .preview-card {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-} 
+  width: 600px;
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+// Columna izquierda (foto + logo)
+.preview-card-image {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: #F2F2F2;
+}
+
+.blank-profile-pic {
+  width: 161px;
+  height: 161px;
+  border-radius: 90px;
+}
+
+.logo-adalab {
+  width: 150px;
+}
+
+// Columna derecha (texto + iconos) 
+.preview-card-info {
+  width: 60%;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.card-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: #4a4a4a;
+}
+
+.card-rol {
+  font-size: 16px;
+  margin: 0 0 20px;
+  color: #666;
+}
+
+// Cada línea de icono + texto en fila
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.info-item img {
+  width: 30px;
+  height: 30px;
+}
+
+
+// Estilos para design (checkboxes)
+
+.bg-style-one {
+  background-color: #b8b8b9;
+}
+
+.bg-style-two {
+  background-color: #0A9D8D;
+}
+
+.bg-style-three {
+  background-color: #CA3825;
+}
+
+// Botones
+
+.download-card-button {
+  background-color: #CA3825;
+  color: white;
+  font-family: 'Rubik';
+  border: none;
+  padding: 10px;
+}
+
+.reset-button {
+  background-color: #CA3825;
+  color: white;
+  font-family: 'Rubik';
+  border: none;
+  padding: 10px;
+}
+
+.design {
+
+}
+
+
+.form-inputs {
+  /*padding: 20px;
+  margin-top: 50px;*/
+}
+
+.preview-title {
+  //margin-bottom: 20px;
+  font-family: 'Rubik';
+  color: #333;
+}
+
+.design-title {
+  color: #333;
+  font-family: "Posterama 2001 W04 SemiBold";
+  
+}
+
+.form-design-card {
+
+}
+
+.card-name {
+  width: max-content;
+  font-size: 30px;
+  font-family: "Posterama 2001 W04 SemiBold";
+}
+
+.form-design-card {
+  margin-top: 20px;
+}
 
 .collapsed {
     display: none;
+}
+
+.form-title {
+    color: #333;
+    font-family: "Posterama 2001 W04 SemiBold";
+}
+
+.download-card-title {
+    color: #333;
+    font-family: "Posterama 2001 W04 SemiBold";
 }
