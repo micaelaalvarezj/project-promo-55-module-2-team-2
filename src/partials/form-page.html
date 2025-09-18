@@ -2,42 +2,44 @@
     <section class="form-inputs">
         <div class="design">
             <h3 class="design-title">Diseña tu tarjeta</h3>
-            <button class="design-control-button">+</button>
+            <button class="design-control-button button-dropdown"><i class="fa-solid fa-caret-down" style="color: #b8b8b9;"></i></button>
             <form  class="form-design-card" action="">
-                <input type="checkbox" class="style-one">
-                <label for=""> Estilo 1</label>
-                <input type="checkbox" class="style-two">
-                <label for=""> Estilo 2</label>
-                <input type="checkbox" class="style-three">
-                <label for=""> Estilo 3</label>
+                <div class="cb-style-one">
+                    <input type="checkbox" class="style-one">
+                    <label for=""> Estilo 1</label>
+                    <img src="" alt="">
+                </div>
+                <div class="cb-style-two">
+                    <input type="checkbox" class="style-two">
+                    <label for=""> Estilo 2</label>
+                    <img src="" alt="">
+                </div>
+                <div class="cb-style-three">
+                    <input type="checkbox" class="style-three">
+                    <label for=""> Estilo 3</label>
+                    <img src="" alt="">
+                </div>
             </form>
         </div>
         <div class="form-to-close">
             <h3 class="form-title">Completa tu tarjeta</h3>
-            <button class="form-control-button">+</button>
+            <button class="form-control-button button-dropdown"><i class="fa-solid fa-caret-down" style="color: #b8b8b9;"></i></button>
             <form action="" class="form-container">
-                <label for="">SUBE TU IMAGEN</label>
-                <input class="input-image" type="file" accept="image/*"><!-- //cambie el type: file -->
-                
-              <!--   <input class="input-image" type="image" placeholder=""> -->
-                <label for="">Nombre</label>
+                <label for="" class="label-form">Sube tu imagen</label>
+                <input class="input-image" type="file" accept="image/*">
+                <label for="" class="label-form">Nombre</label>
                 <input class="input-name" type="text" placeholder="María">
-                <label for="">Rol</label>
+                <label for="" class="label-form">Rol</label>
                 <input class="input-rol" type="text" placeholder="Front-end">
-                <label for="">@ GitHub</label>
+                <label for="" class="label-form">@ GitHub</label>
                 <input class="input-github" type="url" placeholder="https://github.com/maria">
-                <label for="">Email</label>
+                <label for="" class="label-form">Email</label>
                 <input class="input-mail" type="email" placeholder="maria@gmail.com">
-                <label for="">Teléfono</label>
+                <label for="" class="label-form">Teléfono</label>
                 <input class="input-tel" type="tel" placeholder="555 555 555">
-                <label for="">Usuario de Slack</label>
+                <label for="" class="label-form">Usuario de Slack</label>
                 <input  class="input-slack" type="text" placeholder="@_maria">
             </form>
-            <h3 class="download-card-title">Descarga tu tarjeta</h3> 
-            <button class="download-card-control-button">+</button>
-            <div class="download-card">
-                <button class="download-card-button">DESCARGA TU TARJETA</button>
-            </div>
     </section>
 
     <section class="form-card">
@@ -51,8 +53,8 @@
             </div>
             <div class="preview-card-info">
                 <div class="preview-card-info">
-                    <p class="card-name"></p>
-                    <p class="card-rol"></p>
+                    <p class="card-name">MARÍA</p>
+                    <p class="card-rol">FRONT-END</p>
                     <div class="info-item">
                         <img src="images/icon-gray-github.png" class="github-icon" alt="">
                         <p class="card-github">https://github.com/maria</p>
@@ -72,8 +74,13 @@
                 </div>
             </div>
         </div>
-        <div class="reset-button-container">
-            <button class="reset-button">RESET</button>
+        <div class="buttons">
+            <div class="download-card">
+                <button class="download-card-button">DESCARGA TU TARJETA</button>
+            </div>
+            <div class="reset-button-container">
+                <button class="reset-button">RESET</button>
+            </div>
         </div>
     </section>
 </div>

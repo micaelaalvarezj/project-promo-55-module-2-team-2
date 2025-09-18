@@ -25,6 +25,8 @@ const eMail = document.querySelector(".card-email");
 const slackUser = document.querySelector(".card-slack");
 const profileImage = document.querySelector(".blank-profile-pic");
 const previewCard = document.querySelector(".preview-card");
+const originalPreviewCardHTML = previewCard.innerHTML;
+//const formDesign = document.querySelector(".form-design-card");
 
 
 //eventos
@@ -83,16 +85,9 @@ inputTel.addEventListener("input", handleTelInput);
 // Resetear con el botón
 resetBtn.addEventListener("click", () => {
   form.reset();             // limpia los inputs
+  updateIcons();
   inputImage.value = "";    // asegura que el file input quede vacío
-  previewCard.innerHTML = previewCard;
-  // Restaurar tarjeta a su estado inicial
-  profileImage.src = defaultCard.image;
-  cardName.textContent = defaultCard.name;
-  rol.textContent = defaultCard.rol;
-  gitHubUser.textContent = defaultCard.github;
-  slackUser.textContent = defaultCard.slack;
-  eMail.textContent = defaultCard.email;
-  phone.textContent = defaultCard.phone;
+  previewCard.innerHTML = originalPreviewCardHTML;
 });
 
 

@@ -1,3 +1,14 @@
 .collapsed {
     display: none;
 }
+
+.form-design-card {
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Rubik";
+}

@@ -13,9 +13,3 @@ const handleClickFormButton = () => {
     document.querySelector(".form-container").classList.toggle("collapsed");
 };
 collapsButtonForm.addEventListener("click", handleClickFormButton);
-
-const collapsButtonDownload = document.querySelector(".download-card-control-button");
-const handleClickDownloadButton = () => {
-    document.querySelector(".download-card").classList.toggle("collapsed");
-};
-collapsButtonDownload.addEventListener("click", handleClickDownloadButton);

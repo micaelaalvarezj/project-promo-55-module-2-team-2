@@ -1,3 +1,40 @@
-li {
-    color: red;
+.landing_list li {
+    list-style: none;
+    color: #54595B;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.landing-section {
+    font-family: arial, helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+}
+
+.landing_list {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+}
+
+.landing_list i {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.landing_button_start {
+    text-decoration: none;
+    background-color: #ca3824;
+    border: none;
+    color: white;
+    padding: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-top: 40px;
+    font-weight: bold;
 }

@@ -1,7 +1,5 @@
 'use strict';
 
-const previewCard = document.querySelector('.preview-card');
-
 // Variables para los checkboxes
 const styleOne = document.querySelector('.style-one');
 const styleTwo = document.querySelector('.style-two');
@@ -13,6 +11,10 @@ const emailIcon = document.querySelector('.email-icon');
 const phoneIcon = document.querySelector('.phone-icon');
 const slackIcon = document.querySelector('.slack-icon');
 
+// Variable para la preview card
+const previewCardBackground = document.querySelector('.preview-card-image');
+const logoAdalabWhite = document.querySelector('.logo-adalab');
+
 // Función para cambiar tarjeta según el estilo
 function updateIcons(style) {
   if (style === 'style-one') {
@@ -23,9 +25,9 @@ function updateIcons(style) {
     emailIcon.src = 'images/icon-gray-email.png';
     phoneIcon.src = 'images/icon-gray-phone.png';
     slackIcon.src = 'images/icon-gray-slack.png';
-    //previewCard.classList.add('bg-style-one');
-    previewCard.classList.remove('bg-style-two');
-    previewCard.classList.remove('bg-style-three');
+    previewCardBackground.classList.remove('preview-card-image_style2');
+    previewCardBackground.classList.remove('preview-card-image_style3');
+    logoAdalabWhite.src = 'images/logo-adalab.png';
   } else if (style === 'style-two') {
     styleOne.checked = false;
     styleTwo.checked = true;
@@ -34,9 +36,9 @@ function updateIcons(style) {
     emailIcon.src = 'images/icon-green-email.png';
     phoneIcon.src = 'images/icon-green-phone.png';
     slackIcon.src = 'images/icon-green-slack.png';
-    /*previewCard.classList.add('bg-style-two');
-    previewCard.classList.remove('bg-style-one');
-    previewCard.classList.remove('bg-style-three');*/
+    previewCardBackground.classList.add('preview-card-image_style2');
+    previewCardBackground.classList.remove('preview-card-image_style3');
+    logoAdalabWhite.src = 'images/logo-adalab-negativo.png';
   } else if (style === 'style-three') {
     styleOne.checked = false;
     styleTwo.checked = false;
@@ -45,9 +47,9 @@ function updateIcons(style) {
     emailIcon.src = 'images/icon-orange-email.png';
     phoneIcon.src = 'images/icon-orange-phone.png';
     slackIcon.src = 'images/icon-orange-slack.png';
-    /*previewCard.classList.add('bg-style-three');
-    previewCard.classList.remove('bg-style-one');
-    previewCard.classList.remove('bg-style-two');*/
+    previewCardBackground.classList.add('preview-card-image_style3');
+    previewCardBackground.classList.remove('preview-card-image_style2');
+    logoAdalabWhite.src = 'images/logo-adalab-negativo.png';
   }
 };
 
