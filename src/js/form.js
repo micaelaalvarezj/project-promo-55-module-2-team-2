@@ -10,7 +10,7 @@ const inputGitHub = document.querySelector(".input-github");
 const inputMail = document.querySelector(".input-mail");
 const inputTel = document.querySelector(".input-tel");
 const inputSlack  = document.querySelector(".input-slack");
-const resetBtn = document.querySelector(".reset-btn");
+const resetBtn = document.querySelector(".reset-button");
 const form = document.querySelector(".form-container");
 const resetInfoBtn = document.querySelector(".reset-info");
 
@@ -23,57 +23,81 @@ const gitHubUser = document.querySelector(".card-github");
 const phone = document.querySelector(".card-phone");
 const eMail = document.querySelector(".card-email");
 const slackUser = document.querySelector(".card-slack");
+const profileImage = document.querySelector(".blank-profile-pic");
+const previewCard = document.querySelector(".preview-card");
+
+
 //eventos
 
-// Imagen (FileReader)
-inputImage.addEventListener("change", () => {// change permite escuchar cuando suben el archivo
-  const file = inputImage.files[0]; //input de tipo file, permite subir archivos desde la comp.
+// Imagen
+const handleImageChange = (e) => {  //agregue la funcion manejadora que me corrigio en el examen.
+  const file = inputImage.files[0];
   if (file) {
-    const reader = new FileReader();// filereader lee el contenido del archivo/ imagen y lo convierte en una cadena base64.
-    reader.onload = (e) => { //es un evento de filereader
-      img.src = e.target.result;//Esa cadena se guarda en e.target.result.
-      img.style.maxWidth = "120px"; // tamaño de la imagen
-      saveToLocalStorage(); // Guardar imagen también
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      profileImage.src = e.target.result;
+      img.style.maxWidth = "120px";
+     /*  saveToLocalStorage(); */
     };
-      reader.readAsDataURL(file);
+    reader.readAsDataURL(file);
   }
-});
+};
+inputImage.addEventListener("change", handleImageChange);
 
-// Texto y otros inputs
-inputName.addEventListener("input", () => {
-  cardName.textContent = `${inputName.value}`;
-});
+// Nombre
+const handleNameInput = () => {
+  cardName.textContent = inputName.value;
+};
+inputName.addEventListener("input", handleNameInput);
 
-inputRol.addEventListener("input", () => {
-  rol.textContent = `${inputRol.value}`;
-});
+// Rol
+const handleRolInput = () => {
+  rol.textContent = inputRol.value;
+};
+inputRol.addEventListener("input", handleRolInput);
 
-inputGitHub.addEventListener("input", () => {
-  gitHubUser.textContent = `${inputGitHub.value}`;
-});
+// GitHub
+const handleGitHubInput = () => {
+  gitHubUser.textContent = inputGitHub.value;
+};
+inputGitHub.addEventListener("input", handleGitHubInput);
 
-inputSlack.addEventListener("input", () => {
-  slackUser.textContent = `${inputSlack.value}`;
-});
+// Slack
+const handleSlackInput = () => {
+  slackUser.textContent = inputSlack.value;
+};
+inputSlack.addEventListener("input", handleSlackInput);
 
-inputMail.addEventListener("input", () => {
-  eMail.textContent = `${inputMail.value}`;
-});
+// Email
+const handleMailInput = () => {
+  eMail.textContent = inputMail.value;
+};
+inputMail.addEventListener("input", handleMailInput);
 
-inputTel.addEventListener("input", () => {
-  phone.textContent = `${inputTel.value}`;
-});
-
+// Teléfono
+const handleTelInput = () => {
+  phone.textContent = inputTel.value;
+};
+inputTel.addEventListener("input", handleTelInput);
 
 // Resetear con el botón
-/*resetBtn.addEventListener("click", () => {
-  form.reset();             // limpia todos los inputs del form
+resetBtn.addEventListener("click", () => {
+  form.reset();             // limpia los inputs
   inputImage.value = "";    // asegura que el file input quede vacío
-  img.src = "";             // borra la imagen del preview
-  userName.textContent = "";
-  rol.textContent = "";
-  githubUser.textContent = "";
-  slackUser.textContent = "";
-  eMail.textContent = "";
-  phone.textContent = "";
-});*/
+  previewCard.innerHTML = previewCard;
+  // Restaurar tarjeta a su estado inicial
+  profileImage.src = defaultCard.image;
+  cardName.textContent = defaultCard.name;
+  rol.textContent = defaultCard.rol;
+  gitHubUser.textContent = defaultCard.github;
+  slackUser.textContent = defaultCard.slack;
+  eMail.textContent = defaultCard.email;
+  phone.textContent = defaultCard.phone;
+});
+
+
+
+
+
+
+
