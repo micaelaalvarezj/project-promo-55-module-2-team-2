@@ -12,3 +12,17 @@
   flex-direction: column;
   font-family: "Rubik";
 }
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+  gap: 5px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: #4A4A4A;
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Rubik';
+}
