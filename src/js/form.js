@@ -17,13 +17,13 @@ const resetInfoBtn = document.querySelector(".reset-info");
 
 //seleccion de clases del html de la tarjeta
 
-const cardName = document.querySelector(".card-name");
-const rol = document.querySelector(".card-rol");
-const gitHubUser = document.querySelector(".card-github");
-const phone = document.querySelector(".card-phone");
-const eMail = document.querySelector(".card-email");
-const slackUser = document.querySelector(".card-slack");
-const profileImage = document.querySelector(".blank-profile-pic");
+let cardName = document.querySelector(".card-name");
+let rol = document.querySelector(".card-rol");
+let gitHubUser = document.querySelector(".card-github");
+let phone = document.querySelector(".card-phone");
+let eMail = document.querySelector(".card-email");
+let slackUser = document.querySelector(".card-slack");
+let profileImage = document.querySelector(".blank-profile-pic");
 const previewCard = document.querySelector(".preview-card");
 const originalPreviewCardHTML = previewCard.innerHTML;
 //const formDesign = document.querySelector(".form-design-card");
@@ -84,23 +84,55 @@ const handleTelInput = () => {
 };
 inputTel.addEventListener("input", handleTelInput);
 
-// Resetear con el botón
-resetBtn.addEventListener("click", () => {
-  form.reset();             // limpia los inputs
-  updateIcons(); 
-  inputImage.value = "";    // asegura que el file input quede vacío
-  previewCard.innerHTML = originalPreviewCardHTML; 
- 
-});
-
 const dataPreviewDefault = {
-  username: 'Maria XXX',
+  username: 'María',
   rol: 'front-end', 
   gitHubUser: 'https://github.com/maria',
   email: 'maria@gmail.com',
   phone: '555 555 555',
   slack: '@_maria',
+  profilePic: 'images/blank-profile-pic.png',
+  selectedStyle: 'style-one',
   };
+
+/*resetBtn.addEventListener("click", () => {
+  form.reset();            // limpia los inputs
+  updateIcons('style-one');
+  inputImage.value = "";    // asegura que el file input quede vacío
+  previewCard.innerHTML = originalPreviewCardHTML;
+  cardName = document.querySelector(".card-name");
+  rol = document.querySelector(".card-rol");
+  gitHubUser = document.querySelector(".card-github");
+  phone = document.querySelector(".card-phone");
+  eMail = document.querySelector(".card-email");
+  slackUser = document.querySelector(".card-slack");
+  profileImage = document.querySelector(".blank-profile-pic");
+  styleOne = document.querySelector('.style-one');
+  styleTwo = document.querySelector('.style-two');
+  styleThree = document.querySelector('.style-three');
+  githubIcon = document.querySelector('.github-icon');
+  emailIcon = document.querySelector('.email-icon');
+  phoneIcon = document.querySelector('.phone-icon');
+  slackIcon = document.querySelector('.slack-icon');
+  previewCardBackground = document.querySelector('.preview-card-image');
+  logoAdalabWhite = document.querySelector('.logo-adalab');
+});*/
+
+//Resetear con el botón
+resetBtn.addEventListener("click", () => {
+  form.reset();             // limpia los inputs
+  inputImage.value = "";    // asegura que el file input quede vacío
+  cardName.textContent = dataPreviewDefault.username;
+  rol.textContent = dataPreviewDefault.rol;
+  gitHubUser.textContent = dataPreviewDefault.gitHubUser;
+  eMail.textContent = dataPreviewDefault.email;
+  phone.textContent = dataPreviewDefault.phone;
+  slackUser.textContent = dataPreviewDefault.slack;
+  profileImage.src = dataPreviewDefault.profilePic;
+  updateIcons(dataPreviewDefault.selectedStyle);
+});
+
+
 
 
 
