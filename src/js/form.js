@@ -38,7 +38,7 @@ const handleImageChange = (e) => {  //agregue la funcion manejadora que me corri
     const reader = new FileReader();
     reader.onload = (e) => {
       profileImage.src = e.target.result;
-      img.style.maxWidth = "120px";
+      profileImage.style.maxWidth = "120px";
      /*  saveToLocalStorage(); */
     };
     reader.readAsDataURL(file);
@@ -49,6 +49,8 @@ inputImage.addEventListener("change", handleImageChange);
 // Nombre
 const handleNameInput = () => {
   cardName.textContent = inputName.value;
+  console.log(cardName);
+  console.log(inputName);
 };
 inputName.addEventListener("input", handleNameInput);
 
@@ -85,10 +87,22 @@ inputTel.addEventListener("input", handleTelInput);
 // Resetear con el botón
 resetBtn.addEventListener("click", () => {
   form.reset();             // limpia los inputs
-  updateIcons();
+  updateIcons(); 
   inputImage.value = "";    // asegura que el file input quede vacío
-  previewCard.innerHTML = originalPreviewCardHTML;
+  previewCard.innerHTML = originalPreviewCardHTML; 
+ 
 });
+
+const dataPreviewDefault = {
+  username: 'Maria XXX',
+  rol: 'front-end', 
+  gitHubUser: 'https://github.com/maria',
+  email: 'maria@gmail.com',
+  phone: '555 555 555',
+  slack: '@_maria',
+  };
+
+
 
 
 
