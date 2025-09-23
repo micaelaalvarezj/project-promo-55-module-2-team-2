@@ -15,7 +15,6 @@ const resetInfoBtn = document.querySelector(".reset-info");
 
 
 //seleccion de clases del html de la tarjeta
-
 const cardName = document.querySelector(".card-name");
 const rol = document.querySelector(".card-rol");
 const gitHubUser = document.querySelector(".card-github");
@@ -25,6 +24,22 @@ const slackUser = document.querySelector(".card-slack");
 const profileImage = document.querySelector(".blank-profile-pic");
 const previewCard = document.querySelector(".preview-card");
 const originalPreviewCardHTML = previewCard.innerHTML;
+
+
+// Imagen
+const handleImageChange = (e) => {  //agregue la funcion manejadora que me corrigio en el examen.
+  const file = inputImage.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      profileImage.src = e.target.result;
+   
+      saveToLocalStorage(); 
+    };
+    reader.readAsDataURL(file);
+  }
+};
+inputImage.addEventListener("change", handleImageChange);
 
 const dataPreviewDefault = {
   username: 'María',
@@ -78,20 +93,8 @@ const loadFromLocalStorage = () => {
 
 //eventos
 
-// Imagen
-const handleImageChange = (e) => {  //agregue la funcion manejadora que me corrigio en el examen.
-  const file = inputImage.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      profileImage.src = e.target.result;
-   
-      saveToLocalStorage(); 
-    };
-    reader.readAsDataURL(file);
-  }
-};
-inputImage.addEventListener("change", handleImageChange);
+
+
 
 //  Función manejadora en arrow function
 const handleInputChange = () => {
@@ -106,9 +109,11 @@ const handleInputChange = () => {
 [inputName, inputRol, inputGitHub, inputMail, inputTel, inputSlack].forEach(input => {
   input.addEventListener("input", handleInputChange);
 });
- 
-const handleResetForm = () => {
-  form.reset(); 
+
+ document.addEventListener("DOMContentLoaded", loadFromLocalStorage); 
+
+ const handleResetForm = () => {
+  form.reset();
   profileImage.src = dataPreviewDefault.profilePic;
   cardName.textContent = dataPreviewDefault.username;
   rol.textContent = dataPreviewDefault.rol;
@@ -116,9 +121,11 @@ const handleResetForm = () => {
   eMail.textContent = dataPreviewDefault.email;
   phone.textContent = dataPreviewDefault.phone;
   slackUser.textContent = dataPreviewDefault.slack;
-  updateIcons(dataPreviewDefault.selectedStyle); 
-  localStorage.removeItem("cardData"); 
+  updateIcons(dataPreviewDefault.selectedStyle);
+  localStorage.removeItem("cardData");
+  console.log("Formulario y tarjeta reseteados ");
 };
+
 resetBtn.addEventListener("click", handleResetForm);
 
 
