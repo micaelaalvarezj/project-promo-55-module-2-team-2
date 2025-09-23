@@ -123,7 +123,6 @@ const handleInputChange = () => {
   slackUser.textContent = dataPreviewDefault.slack;
   updateIcons(dataPreviewDefault.selectedStyle);
   localStorage.removeItem("cardData");
-  console.log("Formulario y tarjeta reseteados ");
 };
 
 resetBtn.addEventListener("click", handleResetForm);

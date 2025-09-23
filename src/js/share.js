@@ -4,7 +4,6 @@ import domtoimage from 'dom-to-image';
 
 const downloadButton = document.querySelector(".download-card-button");
 downloadButton.addEventListener("click", (event) => {
-    console.log("click en el botón descargar");
     event.preventDefault ();
 
 domtoimage
