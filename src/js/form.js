@@ -25,7 +25,6 @@ const slackUser = document.querySelector(".card-slack");
 const profileImage = document.querySelector(".blank-profile-pic");
 const previewCard = document.querySelector(".preview-card");
 const originalPreviewCardHTML = previewCard.innerHTML;
-//const formDesign = document.querySelector(".form-design-card");
 
 const dataPreviewDefault = {
   username: 'María',
@@ -49,13 +48,11 @@ const dataPreviewDefault = {
     slack: inputSlack.value,
   };
   localStorage.setItem("cardData", JSON.stringify(data));
-  console.log("Guardado en localStorage:", data);
 };
 
 
 const loadFromLocalStorage = () => {
   const saved = localStorage.getItem("cardData");
-  console.log("Recuperado de localStorage:", saved);
 
   if (!saved) return;
   const data = JSON.parse(saved);
@@ -96,99 +93,22 @@ const handleImageChange = (e) => {  //agregue la funcion manejadora que me corri
 };
 inputImage.addEventListener("change", handleImageChange);
 
+//  Función manejadora en arrow function
+const handleInputChange = () => {
+  cardName.textContent = inputName.value || dataPreviewDefault.username;
+  rol.textContent = inputRol.value || dataPreviewDefault.rol;
+  gitHubUser.textContent = inputGitHub.value || dataPreviewDefault.gitHubUser;
+  eMail.textContent = inputMail.value || dataPreviewDefault.email;
+  phone.textContent = inputTel.value || dataPreviewDefault.phone;
+  slackUser.textContent = inputSlack.value || dataPreviewDefault.slack;
+  saveToLocalStorage();
+};
 [inputName, inputRol, inputGitHub, inputMail, inputTel, inputSlack].forEach(input => {
-  input.addEventListener("input", () => {
-    // Reflejar en tarjeta
-    cardName.textContent = inputName.value || dataPreviewDefault.username;
-    rol.textContent = inputRol.value || dataPreviewDefault.rol;
-    gitHubUser.textContent = inputGitHub.value || dataPreviewDefault.gitHubUser;
-    eMail.textContent = inputMail.value || dataPreviewDefault.email;
-    phone.textContent = inputTel.value || dataPreviewDefault.phone;
-    slackUser.textContent = inputSlack.value || dataPreviewDefault.slack;
-
-    saveToLocalStorage();
-  });
+  input.addEventListener("input", handleInputChange);
 });
-
-//* / Nombre
-/* const handleNameInput = () => {
-  cardName.textContent = inputName.value;
-  console.log(cardName);
-  console.log(inputName);
-};
-inputName.addEventListener("input", handleNameInput);
-
-// Rol
-const handleRolInput = () => {
-  rol.textContent = inputRol.value;
-};
-inputRol.addEventListener("input", handleRolInput);
-
-// GitHub
-const handleGitHubInput = () => {
-  gitHubUser.textContent = inputGitHub.value;
-};
-inputGitHub.addEventListener("input", handleGitHubInput);
-
-// Slack
-const handleSlackInput = () => {
-  slackUser.textContent = inputSlack.value;
-};
-inputSlack.addEventListener("input", handleSlackInput);
-
-// Email
-const handleMailInput = () => {
-  eMail.textContent = inputMail.value;
-};
-inputMail.addEventListener("input", handleMailInput);
-
-// Teléfono
-const handleTelInput = () => {
-  phone.textContent = inputTel.value;
-};
-inputTel.addEventListener("input", handleTelInput); */
  
-
-
-/*resetBtn.addEventListener("click", () => {
-  form.reset();            // limpia los inputs
-  updateIcons('style-one');
-  inputImage.value = "";    // asegura que el file input quede vacío
-  previewCard.innerHTML = originalPreviewCardHTML;
-  cardName = document.querySelector(".card-name");
-  rol = document.querySelector(".card-rol");
-  gitHubUser = document.querySelector(".card-github");
-  phone = document.querySelector(".card-phone");
-  eMail = document.querySelector(".card-email");
-  slackUser = document.querySelector(".card-slack");
-  profileImage = document.querySelector(".blank-profile-pic");
-  styleOne = document.querySelector('.style-one');
-  styleTwo = document.querySelector('.style-two');
-  styleThree = document.querySelector('.style-three');
-  githubIcon = document.querySelector('.github-icon');
-  emailIcon = document.querySelector('.email-icon');
-  phoneIcon = document.querySelector('.phone-icon');
-  slackIcon = document.querySelector('.slack-icon');
-  previewCardBackground = document.querySelector('.preview-card-image');
-  logoAdalabWhite = document.querySelector('.logo-adalab');
-});*/
-
-//Resetear con el botón
-/* resetBtn.addEventListener("click", () => {
-  form.reset();             // limpia los inputs
-  inputImage.value = "";    // asegura que el file input quede vacío
-  cardName.textContent = dataPreviewDefault.username;
-  rol.textContent = dataPreviewDefault.rol;
-  gitHubUser.textContent = dataPreviewDefault.gitHubUser;
-  eMail.textContent = dataPreviewDefault.email;
-  phone.textContent = dataPreviewDefault.phone;
-  slackUser.textContent = dataPreviewDefault.slack;
-  profileImage.src = dataPreviewDefault.profilePic;
-  updateIcons(dataPreviewDefault.selectedStyle);
-}); */
-
-resetBtn.addEventListener("click", () => {
-  form.reset();
+const handleResetForm = () => {
+  form.reset(); 
   profileImage.src = dataPreviewDefault.profilePic;
   cardName.textContent = dataPreviewDefault.username;
   rol.textContent = dataPreviewDefault.rol;
@@ -196,15 +116,10 @@ resetBtn.addEventListener("click", () => {
   eMail.textContent = dataPreviewDefault.email;
   phone.textContent = dataPreviewDefault.phone;
   slackUser.textContent = dataPreviewDefault.slack;
-  updateIcons(dataPreviewDefault.selectedStyle);
-  localStorage.removeItem("cardData");
-});
-
-   
-
-
-// Cargar automáticamente los datos al iniciar la página
- document.addEventListener("DOMContentLoaded", loadFromLocalStorage); 
+  updateIcons(dataPreviewDefault.selectedStyle); 
+  localStorage.removeItem("cardData"); 
+};
+resetBtn.addEventListener("click", handleResetForm);
 
 
 
