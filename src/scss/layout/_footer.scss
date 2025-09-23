@@ -1,1 +1,9 @@
 @use '../core/variables' as vars;
+
+footer {
+    background-color: #535759;
+    font-family: "Rubik", Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    padding: 16px;
+}

@@ -1,3 +1,5 @@
+'use strict';
+
 import domtoimage from 'dom-to-image';
 
 const downloadButton = document.querySelector(".download-card-button");

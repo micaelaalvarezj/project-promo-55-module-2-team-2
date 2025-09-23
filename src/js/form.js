@@ -29,12 +29,12 @@ const originalPreviewCardHTML = previewCard.innerHTML;
 
 const dataPreviewDefault = {
   username: 'María',
-  rol: 'front-end', 
+  rol: 'FRONT-END', 
   gitHubUser: 'https://github.com/maria',
   email: 'maria@gmail.com',
   phone: '555 555 555',
   slack: '@_maria',
-  profilePic: 'images/blank-profile-pic.png',
+  profilePic: 'images/default-profile-pic.png',
   selectedStyle: 'style-one',
   };
 
