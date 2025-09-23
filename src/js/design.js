@@ -16,8 +16,7 @@ const previewCardBackground = document.querySelector('.preview-card-image');
 const logoAdalabWhite = document.querySelector('.logo-adalab');
 
 // Función para cambiar tarjeta según el estilo
-function updateIcons(style) {
-  console.log( style);
+const updateIcons = (style) => {
   if (style === 'style-one') {
     styleOne.checked = true;
     styleTwo.checked = false;
