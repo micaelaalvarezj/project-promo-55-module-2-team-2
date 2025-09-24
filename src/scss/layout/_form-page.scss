@@ -1,7 +1,7 @@
 
 .container-all {
     display: flex;
-    gap: 100px;
+    gap: 60px;
     justify-content: center;
     margin: 50px;
 }
@@ -9,7 +9,7 @@
 .form-container {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    max-width: fit-content;
     gap: 5px;
     background-color: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -150,7 +150,7 @@
 .form-design-card {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: fit-content;
     gap: 5px;
     background-color: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
