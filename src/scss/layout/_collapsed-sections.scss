@@ -1,10 +1,10 @@
 .collapsed {
-    display: none;
+  display: none;
 }
 
 .form-design-card {
   background-color: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   padding: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -14,15 +14,15 @@
 }
 
 .form-container {
-  display: flex;
-  flex-direction: column;
-  max-width: fit-content;
-  gap: 5px;
-  background-color: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  color: #4A4A4A;
-  padding: 30px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-family: 'Rubik', Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    gap: 5px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #4a4a4a;
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: "Rubik", Arial, Helvetica, sans-serif;
 }
