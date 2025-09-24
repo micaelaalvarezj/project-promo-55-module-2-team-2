@@ -28,32 +28,32 @@ const originalPreviewCardHTML = previewCard.innerHTML;
 
 // Imagen
 const handleImageChange = (e) => {  //agregue la funcion manejadora que me corrigio en el examen.
-  const file = inputImage.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      profileImage.src = e.target.result;
-   
-      saveToLocalStorage(); 
-    };
-    reader.readAsDataURL(file);
-  }
+    const file = inputImage.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                profileImage.src = e.target.result;
+
+                saveToLocalStorage(); 
+            };
+            reader.readAsDataURL(file);
+        }
 };
 inputImage.addEventListener("change", handleImageChange);
 
 const dataPreviewDefault = {
-  username: 'María',
-  rol: 'FRONT-END', 
-  gitHubUser: 'https://github.com/maria',
-  email: 'maria@gmail.com',
-  phone: '555 555 555',
-  slack: '@_maria',
-  profilePic: 'images/default-profile-pic.png',
-  selectedStyle: 'style-one',
-  };
+    username: 'María',
+    rol: 'FRONT-END', 
+    gitHubUser: 'https://github.com/maria',
+    email: 'maria@gmail.com',
+    phone: '555 555 555',
+    slack: '@_maria',
+    profilePic: 'images/default-profile-pic.png',
+    selectedStyle: 'style-one',
+};
 
-  const saveToLocalStorage = () => {
-  const data = {
+const saveToLocalStorage = () => {
+const data = {
     image: profileImage.src,
     name: inputName.value,
     rol: inputRol.value,
@@ -61,16 +61,16 @@ const dataPreviewDefault = {
     mail: inputMail.value,
     tel: inputTel.value,
     slack: inputSlack.value,
-  };
-  localStorage.setItem("cardData", JSON.stringify(data));
+};
+localStorage.setItem("cardData", JSON.stringify(data));
 };
 
 
 const loadFromLocalStorage = () => {
-  const saved = localStorage.getItem("cardData");
+    const saved = localStorage.getItem("cardData");
 
-  if (!saved) return;
-  const data = JSON.parse(saved);
+    if (!saved) return;
+    const data = JSON.parse(saved);
 
     // Rellenar inputs
     inputName.value = data.name || ""; 
@@ -91,47 +91,33 @@ const loadFromLocalStorage = () => {
 }
 
 
-//eventos
-
-
-
-
 //  Función manejadora en arrow function
 const handleInputChange = () => {
-  cardName.textContent = inputName.value || dataPreviewDefault.username;
-  rol.textContent = inputRol.value || dataPreviewDefault.rol;
-  gitHubUser.textContent = inputGitHub.value || dataPreviewDefault.gitHubUser;
-  eMail.textContent = inputMail.value || dataPreviewDefault.email;
-  phone.textContent = inputTel.value || dataPreviewDefault.phone;
-  slackUser.textContent = inputSlack.value || dataPreviewDefault.slack;
-  saveToLocalStorage();
+    cardName.textContent = inputName.value || dataPreviewDefault.username;
+    rol.textContent = inputRol.value || dataPreviewDefault.rol;
+    gitHubUser.textContent = inputGitHub.value || dataPreviewDefault.gitHubUser;
+    eMail.textContent = inputMail.value || dataPreviewDefault.email;
+    phone.textContent = inputTel.value || dataPreviewDefault.phone;
+    slackUser.textContent = inputSlack.value || dataPreviewDefault.slack;
+    saveToLocalStorage();
 };
 [inputName, inputRol, inputGitHub, inputMail, inputTel, inputSlack].forEach(input => {
-  input.addEventListener("input", handleInputChange);
+    input.addEventListener("input", handleInputChange);
 });
 
- document.addEventListener("DOMContentLoaded", loadFromLocalStorage); 
+document.addEventListener("DOMContentLoaded", loadFromLocalStorage); 
 
- const handleResetForm = () => {
-  form.reset();
-  profileImage.src = dataPreviewDefault.profilePic;
-  cardName.textContent = dataPreviewDefault.username;
-  rol.textContent = dataPreviewDefault.rol;
-  gitHubUser.textContent = dataPreviewDefault.gitHubUser;
-  eMail.textContent = dataPreviewDefault.email;
-  phone.textContent = dataPreviewDefault.phone;
-  slackUser.textContent = dataPreviewDefault.slack;
-  updateIcons(dataPreviewDefault.selectedStyle);
-  localStorage.removeItem("cardData");
+const handleResetForm = () => {
+    form.reset();
+    profileImage.src = dataPreviewDefault.profilePic;
+    cardName.textContent = dataPreviewDefault.username;
+    rol.textContent = dataPreviewDefault.rol;
+    gitHubUser.textContent = dataPreviewDefault.gitHubUser;
+    eMail.textContent = dataPreviewDefault.email;
+    phone.textContent = dataPreviewDefault.phone;
+    slackUser.textContent = dataPreviewDefault.slack;
+    updateIcons(dataPreviewDefault.selectedStyle);
+    localStorage.removeItem("cardData");
 };
 
 resetBtn.addEventListener("click", handleResetForm);
-
-
-
-
-
-
-
-
-
